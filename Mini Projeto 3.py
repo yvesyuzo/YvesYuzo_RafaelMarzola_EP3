@@ -22,4 +22,13 @@ for la in leitura:
         usuario.append(y)
 #--------------------------
 print(usuario)
--
+
+def info_nutricional(lista_de_alimentos_com_info):
+    info_nutricional = dict
+    for i in range (1,len[lista_de_alimentos_com_info]):
+        split_da_linha = lista_de_alimentos_com_info[i].split(',')
+        info_nutricional = {split_da_linha[0]: split_da_linha[1:]}
+    return info_nutricional
+        
+info_nutricional(alimentos)    
+
