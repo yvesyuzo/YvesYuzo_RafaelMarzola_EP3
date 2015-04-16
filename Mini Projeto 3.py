@@ -22,4 +22,4 @@ for la in leitura:
         usuario.append(y)
 #--------------------------
 print(usuario)
-
+-
