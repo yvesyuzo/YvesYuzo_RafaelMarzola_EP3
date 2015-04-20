@@ -12,15 +12,23 @@ for pa in leitura:
     x = pa.strip().lower()
     if x != "":
         alimentos.append(x)
+#Criação de uma lista com a info do usuario
         
 usuario_raw = open("usuario.csv", encoding = "cp1252")
 leitura2 = usuario_raw.readlines()
 usuario = []
-for la in leitura:
+for la in leitura2:
     y = la.strip().lower()
     if y != "":
         usuario.append(y)
 #--------------------------
+def criador_info_usuario (usuario_csv):
+    info_usuario = {}
+    split_da_linha1 = usuario_csv[1].split(',')
+    info_usuario[split_da_linha1[0]] = split_da_linha1[1:]
+    
+    return info_usuario
+
 
 def criador_info_nutricional(lista_de_alimentos_com_info):
     info_nutricional = {}    
@@ -30,7 +38,9 @@ def criador_info_nutricional(lista_de_alimentos_com_info):
         
     return info_nutricional
         
-d = criador_info_nutricional (alimentos)
-print(d['acerola'][3])
+lista_de_alimentos = criador_info_nutricional (alimentos)
+info_usuario = criador_info_usuario (usuario)
+
+print(usuario)
 
 
