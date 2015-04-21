@@ -50,7 +50,7 @@ def calcula_tmb (info_usuario_parcial, usuario_csv):
     
     info_usuario_total = usuario_csv[1].split(',')
     tmb = float
-    print(info_usuario_total)
+    
     
     #Calcula as necessidades caloricas ideais para o corpo manter o seu peso com 
 #   a fórmula de Harris-Benedict (TMB)
@@ -97,12 +97,12 @@ def criador_info_nutricional(lista_de_alimentos_com_info):
     return info_nutricional
 
 
-lista_de_alimentos = criador_info_nutricional (alimentos)
-info_usuario_parcial = criador_lista_com_numeros_do_usuario (usuario)
-tmb = calcula_tmb (info_usuario_parcial, usuario)
-imc = calcula_imc (info_usuario_parcial)
-
-print (tmb)
+#lista_de_alimentos = criador_info_nutricional (alimentos)
+#info_usuario_parcial = criador_lista_com_numeros_do_usuario (usuario)
+#tmb = calcula_tmb (info_usuario_parcial, usuario)
+#imc = calcula_imc (info_usuario_parcial)
+#
+#print (tmb)
 
 
 
@@ -112,12 +112,12 @@ print (tmb)
 # SUA PARTE MARZOLA
 # Veja as minhas funções que retornam o IMC e o TMB
 
-import matplotlib.pyplot as plt
-
-
-def grafico_do_usuario():
-    for i in range(usuario.csv):
-        print(usuario.csv(dados))
+#import matplotlib.pyplot as plt
+#
+#
+#def grafico_do_usuario():
+#    for i in range(usuario.csv):
+#        print(usuario.csv(dados))
 
 
 
