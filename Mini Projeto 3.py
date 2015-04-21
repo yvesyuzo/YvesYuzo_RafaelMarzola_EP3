@@ -50,6 +50,7 @@ def calcula_tmb (info_usuario_parcial, usuario_csv):
     
     info_usuario_total = usuario_csv[1].split(',')
     tmb = float
+    print(info_usuario_total)
     
     #Calcula as necessidades caloricas ideais para o corpo manter o seu peso com 
 #   a fórmula de Harris-Benedict (TMB)
@@ -67,6 +68,15 @@ def calcula_tmb (info_usuario_parcial, usuario_csv):
     #Para mulheres TMB = 447,6 + (9.2 x peso, kg) + (3,1 x altura, cm) - (4,3 x idade em anos)
 
         tmb = 447.6 + 9.2 * peso + 3.1 * altura - 4.3 * idade
+    # multiplica o fator de atividade física ao "tmb" caso seja diferente de "mínimo"
+    if 'baixo' in info_usuario_total:        
+        tmb = tmb * 1.375
+    if 'médio' in info_usuario_total:
+        tmb = tmb * 1.55
+    if 'alto' in info_usuario_total:
+        tmb = tmb * 1.725
+    if 'muito alto' in info_usuario_total:
+        tmb = tmb * 1,9        
     
     return tmb
     
@@ -78,7 +88,7 @@ def calcula_imc (info_usuario_parcial):
     return imc
 
 
-<<<<<<< HEAD
+
 def criador_info_nutricional(lista_de_alimentos_com_info):
     info_nutricional = {}    
     for i in range(1,len(lista_de_alimentos_com_info)):        
@@ -86,26 +96,6 @@ def criador_info_nutricional(lista_de_alimentos_com_info):
         info_nutricional[split_da_linha[0]] = split_da_linha[1:]
     return info_nutricional
 
-        
-=======
-print(usuario)
-
-
-def info_nutricional(lista_de_alimentos_com_info):
-    info_nutricional = dict
-    for i in range (1,len[lista_de_alimentos_com_info]):
-#print (info_nutricional)
-        
-#def criador_info_nutricional(lista_de_alimentos_com_info):
- #   info_nutricional = {}    
-  #  for i in range(1,len(lista_de_alimentos_com_info)):        
-   #     split_da_linha = lista_de_alimentos_com_info[i].split(',')
-    #    info_nutricional = {split_da_linha[0]: split_da_linha[1:]}
-     #   info_nutricional[split_da_linha[0]] = split_da_linha[1:]
-        
-    #return info_nutricional
-        
->>>>>>> origin/master
 
 lista_de_alimentos = criador_info_nutricional (alimentos)
 info_usuario_parcial = criador_lista_com_numeros_do_usuario (usuario)
@@ -132,18 +122,13 @@ def grafico_do_usuario():
 
 
 
-import numpy as np
-import matplotlib.pyplot as plt
 
-<<<<<<< HEAD
 
 #minimo = 0
 #baixo = 1:3
 #medio = 3:5
 #alto = 6:7
-=======
-print(usuario)
-=======
+
 #info_nutricional(alimentos)    
 #d = criador_info_nutricional (alimentos)
 #print(d['acerola'][3])"""
@@ -151,332 +136,3 @@ print(usuario)
 
 #-----------
 
-import matplotlib.pyplot as plt
-
-
-def grafico_do_usuario():
-    for i in range(usuario.csv):
-        print(usuario.csv(dados))
-
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-#minimo = 0
-#baixo = 1:3
-#medio = 3:5
-#alto = 6:7
-
-def Calcula_cal_usuario(usuario.csv): #calcula a quantidade minima de energia para o organismo
-    
-    if Sexo == "M"    
-        TMB = 88.36 + (13.4*Peso) + ((4.8*Altura)/100) + (5.7*Idade)
-    
-    else:
-        TMB = 447.6 + (9.2*Peso) + ((3.1*Altura)/100) + (4.3*Idade)
-        
-    return(Calcula_cal_usuario)
-    
-    
-def Calcula_cal_ideal(): #calcula a necessidade energetica e calorica do organismo de acordo com o nivel de atividade fisica
-
-    if Fator == "minimo"
-        ideal = TMB*1.2
-    
-    if Fator == "baixo"
-        ideal = TMB*1.375
-        
-    if Fator == "medio"
-        ideal = TMB*1.55
-        
-    if Fator == "alto"
-        ideal = TMB*1.9
-    
-    return (Calcula_cal_ideal)
-    
-def Calcula_cal_consumida_usuario(): #calcula o real consumo de energia do usuario baseado na sua alimentação
-    
-    for i in range (06/04/15):
-
-        u = chave[0]*quantidade + chave[1]*quantiade + chave[2]*quantidade + chave[3]*quantidade
-    
-    for i in range (07/04/15):
-        
-        r = chave[0]*quantidade + chave[1]*quantidade + chave[2]*quantidade + chave[3]*quantidade
-   
-   #Calorias
-   #grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Calorias (kcal)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 06/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Calorias (kcal)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 07/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-    #proteinas
-#grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Proteínas (g)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 06/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Proteínas (g)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 07/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-
-    #Carboidratos
-#grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Carboidratos (g)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 06/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Carboidratos (g)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 07/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-
-    #gordura
-#grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Gordura (g)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 06/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
-
-    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-fig, ax1 = plt.subplots()
-t = (0.01, 10.0, 0.01) #escala
-ax1.plot(t, 'b-')
-ax1.set_xlabel('Consumo de Gordura (g)')
-ax1.set_ylabel('Consumo do usuario', color='b')
-
- 
-plt.title ("Gráfico do dia 07/04/15")
-ax2 = ax1.twinx()
-ax2.plot(t, 'r.')
-ax2.set_ylabel('Consumo ideal', color='r')
-plt.show()
->>>>>>> origin/master
-
-#def Calcula_cal_usuario(usuario.csv): #calcula a quantidade minima de energia para o organismo
-#    
-#    if Sexo == "M"    
-#        TMB = 88.36 + (13.4*Peso) + ((4.8*Altura)/100) + (5.7*Idade)
-#    
-#    else:
-#        TMB = 447.6 + (9.2*Peso) + ((3.1*Altura)/100) + (4.3*Idade)
-#        
-#    return(Calcula_cal_usuario)
-#    
-#    
-#def Calcula_cal_ideal(): #calcula a necessidade energetica e calorica do organismo de acordo com o nivel de atividade fisica
-#
-#    if Fator == "minimo"
-#        ideal = TMB*1.2
-#    
-#    if Fator == "baixo"
-#        ideal = TMB*1.375
-#        
-#    if Fator == "medio"
-#        ideal = TMB*1.55
-#        
-#    if Fator == "alto"
-#        ideal = TMB*1.9
-#    
-#    return (Calcula_cal_ideal)
-#    
-#def Calcula_cal_consumida_usuario(): #calcula o real consumo de energia do usuario baseado na sua alimentação
-#    
-#    for i in range (06/04/15):
-#
-#        u = chave[0]*quantidade + chave[1]*quantiade + chave[2]*quantidade + chave[3]*quantidade
-#    
-#    for i in range (07/04/15):
-#        
-#        r = chave[0]*quantidade + chave[1]*quantidade + chave[2]*quantidade + chave[3]*quantidade
-#   
-#   #Calorias
-#   #grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Calorias (kcal)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 06/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Calorias (kcal)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 07/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#    #proteinas
-##grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Proteínas (g)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 06/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Proteínas (g)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 07/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#
-#    #Carboidratos
-##grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Carboidratos (g)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 06/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Carboidratos (g)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 07/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#
-#    #gordura
-##grafico do dia 07/04/15. Comparacao do consumo diario de energia com o consumo ideal de energia
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Gordura (g)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#
-# 
-#plt.title ("Gráfico do dia 06/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
-#    #grafico do dia 06/04/15. Comparacao do consumo diario de energia e do consumo ideal
-#fig, ax1 = plt.subplots()
-#t = (0.01, 10.0, 0.01) #escala
-#ax1.plot(t, 'b-')
-#ax1.set_xlabel('Consumo de Gordura (g)')
-#ax1.set_ylabel('Consumo do usuario', color='b')
-#>>>>>>> origin/master
-#
-# 
-#plt.title ("Gráfico do dia 07/04/15")
-#ax2 = ax1.twinx()
-#ax2.plot(t, 'r.')
-#ax2.set_ylabel('Consumo ideal', color='r')
-#plt.show()
-#
