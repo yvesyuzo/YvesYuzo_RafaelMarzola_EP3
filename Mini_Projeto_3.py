@@ -107,13 +107,104 @@ def criador_info_nutricional(lista_de_alimentos_com_info):
 
 def intervalo_de_tempo_do_usuario (usuario_csv):
     datas = []
+    dias = []
     for i in range (3, len(usuario_csv)):
         split_da_linha = usuario_csv[i].split(',')
         if split_da_linha[0] not in datas:
             datas.append(split_da_linha[0])
         else:
             pass
-    datas.sort()
-    return datas
         
     
+    
+    for i in range (len(datas)):
+        split_da_linha = datas[i].split('/')
+        x = split_da_linha[0]
+        
+        x = x.replace('01','1')
+        x = x.replace('02','2')
+        x = x.replace('03','3')
+        x = x.replace('04','4')
+        x = x.replace('05','5')
+        x = x.replace('06','6')
+        x = x.replace('07','7')
+        x = x.replace('08','8')
+        x = x.replace('09','9')
+        
+        dias.append(x)
+
+    
+    return dias
+    
+def gerar_lista_calorias (usuario_csv, dicionario_alimentos):
+    calorias_consumidas_a_cada_dia = []
+    
+    
+    
+    for i in range (3, len(usuario_csv)):
+        split_da_linha = usuario_csv[i].split(',')
+        
+        if split_da_linha[1] in dicionario_alimentos:
+            calorias_de_100g_do_alimento = float(dicionario_alimentos[split_da_linha[1]][1])
+            split_da_linha[2] = float(split_da_linha[2])
+            calorias_consumidas = float(calorias_de_100g_do_alimento / 100 * split_da_linha[2])
+            calorias_consumidas_a_cada_dia.append(calorias_consumidas)
+    
+    return calorias_consumidas_a_cada_dia
+    
+def gerar_lista_proteinas (usuario_csv, dicionario_alimentos):
+    lista_de_proteinas = []
+    
+    for i in range (3, len(usuario_csv)):
+        split_da_linha = usuario_csv[i].split(',')
+    
+        if split_da_linha[1] in dicionario_alimentos:
+            proteinas_de_100g_de_alimento = float(dicionario_alimentos[split_da_linha[1]][2])
+            split_da_linha[2] = float(split_da_linha[2])
+            proteinas_consumidas = float(proteinas_de_100g_de_alimento / 100 * split_da_linha[2])
+            lista_de_proteinas.append(proteinas_consumidas)
+
+    return lista_de_proteinas
+              
+    
+    
+def gerar_lista_carboidratos (usuario_csv, dicionario_alimentos):
+    lista_de_carboidratos = []
+    
+    for i in range (3, len(usuario_csv)):
+        split_da_linha = usuario_csv[i].split(',')
+    
+        if split_da_linha[1] in dicionario_alimentos:
+            carboidratos_de_100g_de_alimento = float(dicionario_alimentos[split_da_linha[1]][3])
+            split_da_linha[2] = float(split_da_linha[2])
+            carboidratos_consumidas = float(carboidratos_de_100g_de_alimento / 100 * split_da_linha[2])
+            lista_de_carboidratos.append(carboidratos_consumidas)
+
+    return lista_de_carboidratos
+
+def gerar_lista_gorduras (usuario_csv, dicionario_alimentos):
+    lista_de_gorduras = []
+    
+    for i in range (3, len(usuario_csv)):
+        split_da_linha = usuario_csv[i].split(',')
+    
+        if split_da_linha[1] in dicionario_alimentos:
+            gorduras_de_100g_de_alimento = float(dicionario_alimentos[split_da_linha[1]][4])
+            split_da_linha[2] = float(split_da_linha[2])
+            gorduras_consumidas = float(gorduras_de_100g_de_alimento / 100 * split_da_linha[2])
+            lista_de_gorduras.append(gorduras_consumidas)
+
+    return lista_de_gorduras          
+            
+        
+        
+    
+
+
+
+
+
+
+
+
+
