@@ -7,7 +7,7 @@ Created on Tue Apr 21 19:15:18 2015
 
 # MARZOLA Vamos trabalhar no grafico cada um em arquivos separados para não dar erro de sincronização
 
-#from Mini_Projeto_3 import*
+from Mini_Projeto_3 import*
         
 import matplotlib.pyplot as plt
 

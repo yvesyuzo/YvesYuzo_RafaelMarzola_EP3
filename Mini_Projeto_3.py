@@ -21,6 +21,14 @@ for la in leitura2:
     y = la.strip().lower()
     if y != "":
         usuario.append(y)
+        
+usuario_teste_raw = open("usuario_teste.csv")
+leitura3 = usuario_teste_raw.readlines()
+usuario_teste = []
+for la in leitura3:
+    z = la.strip().lower()
+    if z != "":
+        usuario_teste.append(z)
 #--------------------------
         
     
@@ -97,42 +105,15 @@ def criador_info_nutricional(lista_de_alimentos_com_info):
     return info_nutricional
 
 
-#lista_de_alimentos = criador_info_nutricional (alimentos)
-#info_usuario_parcial = criador_lista_com_numeros_do_usuario (usuario)
-#tmb = calcula_tmb (info_usuario_parcial, usuario)
-#imc = calcula_imc (info_usuario_parcial)
-#
-#print (tmb)
-
-
-
-
-
-#-----------
-# SUA PARTE MARZOLA
-# Veja as minhas funções que retornam o IMC e o TMB
-
-#import matplotlib.pyplot as plt
-#
-#
-#def grafico_do_usuario():
-#    for i in range(usuario.csv):
-#        print(usuario.csv(dados))
-
-
-
-
-
-
-#minimo = 0
-#baixo = 1:3
-#medio = 3:5
-#alto = 6:7
-
-#info_nutricional(alimentos)    
-#d = criador_info_nutricional (alimentos)
-#print(d['acerola'][3])"""
-
-
-#-----------
-
+def intervalo_de_tempo_do_usuario (usuario_csv):
+    datas = []
+    for i in range (3, len(usuario_csv)):
+        split_da_linha = usuario_csv[i].split(',')
+        if split_da_linha[0] not in datas:
+            datas.append(split_da_linha[0])
+        else:
+            pass
+    datas.sort()
+    return datas
+        
+    
